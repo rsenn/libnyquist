@@ -15,7 +15,14 @@ pkg_search_module(LIBMPCDEC libmpcdec)
 pkg_search_module(LIBWAVPACK wavpack)
 
 check_library_exists(vorbisfile ov_streams "" HAVE_LIBVORBISFILE)
+if(HAVE_LIBVORBISFILE)
+  set(LIBVORBISFILE_LIBRARIES vorbisfile)
+endif(HAVE_LIBVORBISFILE)
+
 check_library_exists(mpcdec mpc_demux_decode "" HAVE_LIBMPCDEC)
+if(HAVE_LIBMPCDEC)
+  set(LIBMPCDEC_LIBRARIES mpcdec)
+endif(HAVE_LIBMPCDEC)
 
 set(SOURCES
     include/libnyquist/AudioDecoder.h
@@ -68,4 +75,12 @@ add_definitions(-DNDEBUG)
 set(BUILD_SHARED_LIBS TRUE)
 
 add_library(nyquist ${SOURCES})
-target_link_libraries(nyquist ${LIBMODPLUG_LIBRARIES} ${LIBOPUSFILE_LIBRARIES} ${LIBFLAC_LIBRARIES} ${LIBOPUS_LIBRARIES} ${LIBWAVPACK_LIBRARIES})
+target_link_libraries(nyquist 
+    ${LIBFLAC_LIBRARIES}
+    ${LIBMODPLUG_LIBRARIES}
+    ${LIBMPCDEC_LIBRARIES}
+    ${LIBOPUSFILE_LIBRARIES}
+    ${LIBOPUS_LIBRARIES}
+    ${LIBVORBISFILE_LIBRARIES}
+    ${LIBWAVPACK_LIBRARIES}
+)
