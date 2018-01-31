@@ -61,13 +61,23 @@ set(SOURCES
 )
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}/include/libnyquist
-  ${CMAKE_SOURCE_DIR}/third_party
-  ${CMAKE_SOURCE_DIR}/third_party/flac
-  ${CMAKE_SOURCE_DIR}/third_party/flac/src/include
-  ${CMAKE_SOURCE_DIR}/third_party/rtaudio
-  third_party/opus/libopus/include
-  third_party/wavpack/include
+  include/libnyquist
+  third_party
+#  third_party/flac
+#  third_party/flac/src/include
+#  third_party/rtaudio
+#  third_party/opus/libopus/include
+#  third_party/wavpack/include
+    ${LIBFLAC_INCLUDEDIR}
+    ${LIBGPAC_INCLUDEDIR}
+    ${LIBMODPLUG_INCLUDEDIR}
+    ${LIBMPCDEC_INCLUDEDIR}
+    ${LIBOGG_INCLUDEDIR}
+    ${LIBOPUSFILE_INCLUDE_DIRS}
+    ${LIBOPUS_INCLUDEDIR}
+    ${LIBVORBISFILE_INCLUDEDIR}
+    ${LIBVORBIS_INCLUDEDIR}
+    ${LIBWAVPACK_INCLUDEDIR}
 )
 
 add_definitions(-DNDEBUG)

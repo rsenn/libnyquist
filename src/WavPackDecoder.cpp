@@ -24,7 +24,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include "WavPackDecoder.h"
-#include "wavpack.h"
+#include <wavpack/wavpack.h>
 
 using namespace nqr;
 

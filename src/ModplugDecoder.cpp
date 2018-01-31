@@ -31,7 +31,7 @@ using namespace nqr;
 #define MODPLUG_STATIC
 #endif
 
-#include "libmodplug/src/modplug.h"
+#include <libmodplug/modplug.h>
 
 class ModplugInternal
 {
