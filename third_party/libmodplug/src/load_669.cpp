@@ -9,7 +9,9 @@
 // 669 Composer / UNIS 669 module loader
 ////////////////////////////////////////////////////////////
 
+#ifdef _MSC_VER
 #include "stdafx.h"
+#endif
 #include "sndfile.h"
 
 //#pragma warning(disable:4244)

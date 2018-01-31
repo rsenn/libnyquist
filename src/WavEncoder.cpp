@@ -53,7 +53,7 @@ static inline void to_bytes(uint32_t value, char * arr)
 
 int WavEncoder::WriteFile(const EncoderParams p, const AudioData * d, const std::string & path)
 {
-	assert(d->samples.size() > 0);
+	// assert(d->samples.size() > 0);
 
 	// Cast away const because we know what we are doing (Hopefully?)
 	float * sampleData = const_cast<float *>(d->samples.data());
@@ -407,8 +407,8 @@ public:
 // This encoder only supports mono for the time being
 int OggOpusEncoder::WriteFile(const EncoderParams p, const AudioData * d, const std::string & path)
 {
-	assert(d->samples.size() > 0);
-	//assert(d->sampleRate == 48000);
+	// assert(d->samples.size() > 0);
+	//// assert(d->sampleRate == 48000);
 
 	float * sampleData = const_cast<float *>(d->samples.data());
 	const size_t sampleDataSize = d->samples.size();

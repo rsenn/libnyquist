@@ -27,6 +27,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "RiffUtils.h"
 #include "IMA4Util.h"
 
+#include <cstring>
+
 using namespace nqr;
 
 //////////////////////
@@ -85,7 +87,7 @@ void WavDecoder::LoadFromBuffer(AudioData * data, const std::vector<uint8_t> & m
     
     if (WaveChunkInfo.offset == 0) throw std::runtime_error("couldn't find fmt chunk");
     
-    assert(WaveChunkInfo.size == 16 || WaveChunkInfo.size == 18 || WaveChunkInfo.size == 20 || WaveChunkInfo.size == 40);
+    // assert(WaveChunkInfo.size == 16 || WaveChunkInfo.size == 18 || WaveChunkInfo.size == 20 || WaveChunkInfo.size == 40);
     
     WaveChunkHeader wavHeader = {};
     memcpy(&wavHeader, memory.data() + WaveChunkInfo.offset, sizeof(WaveChunkHeader));

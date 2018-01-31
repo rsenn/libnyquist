@@ -17,6 +17,30 @@
 int _strnicmp(const char *str1,const char *str2, int n);
 #endif
 
+#ifndef BYTE
+#define BYTE unsigned char
+#endif
+
+#ifndef CHAR
+#define CHAR char
+#endif
+
+#ifndef WORD
+#define WORD unsigned short
+#endif
+
+#ifndef UINT
+#define UINT unsigned int
+#endif
+
+#ifndef LONG
+#define LONG long
+#endif
+
+#ifndef DWORD
+#define DWORD unsigned int
+#endif
+
 #ifndef LPCBYTE
 typedef const BYTE * LPCBYTE;
 #endif

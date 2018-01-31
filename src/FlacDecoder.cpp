@@ -29,6 +29,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "AudioDecoder.h"
 
+#include <cstring>
+
 using namespace nqr;
 
 class FlacDecoderInternal

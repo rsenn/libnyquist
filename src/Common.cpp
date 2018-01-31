@@ -63,7 +63,7 @@ NyquistFileBuffer nqr::ReadFile(std::string pathToFile)
 // @todo normalize?
 void nqr::ConvertToFloat32(float * dst, const uint8_t * src, const size_t N, PCMFormat f)
 {
-    assert(f != PCM_END);
+    // assert(f != PCM_END);
     
     if (f == PCM_U8)
     {
@@ -120,7 +120,7 @@ void nqr::ConvertToFloat32(float * dst, const uint8_t * src, const size_t N, PCM
 // Src data is always aligned to 4 bytes (WavPack, primarily)
 void nqr::ConvertToFloat32(float * dst, const int32_t * src, const size_t N, PCMFormat f)
 {
-    assert(f != PCM_END);
+    // assert(f != PCM_END);
     
     if (f == PCM_16)
     {
@@ -147,7 +147,7 @@ void nqr::ConvertToFloat32(float * dst, const int32_t * src, const size_t N, PCM
 
 void nqr::ConvertToFloat32(float * dst, const int16_t * src, const size_t N, PCMFormat f)
 {
-    assert(f != PCM_END);
+    // assert(f != PCM_END);
     if (f == PCM_16)
     {
         for (size_t i = 0; i < N; ++i)
@@ -157,7 +157,7 @@ void nqr::ConvertToFloat32(float * dst, const int16_t * src, const size_t N, PCM
 
 void nqr::ConvertFromFloat32(uint8_t * dst, const float * src, const size_t N, PCMFormat f, DitherType t)
 {
-    assert(f != PCM_END);
+    // assert(f != PCM_END);
 
     Dither dither(t);
     
